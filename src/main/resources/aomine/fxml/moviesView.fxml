@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aomine.view.MoviesView">
+   <children>
+      <HBox alignment="CENTER_LEFT" fillHeight="false" minHeight="50.0" style="-fx-background-color: #4747FF;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo-white.png" />
+               </image>
+            </ImageView>
+            <Pane HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" fillHeight="false" spacing="8.0">
+               <children>
+                  <Text fx:id="tUsername" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/avatar.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" nodeOrientation="LEFT_TO_RIGHT" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+         <content>
+            <FlowPane fx:id="fpContainer" hgap="20.0" style="-fx-background-color: white;" vgap="20.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" fillHeight="false" prefWidth="700.0" spacing="8.0">
+                     <children>
+                        <Text fill="#262626" strokeType="OUTSIDE" strokeWidth="0.0" text="Peliculas">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                        <SVGPath content="M19.269 0.0899963L15.339 0.869996L18.079 4.41L20.049 4.01L19.269 0.0899963ZM12.399 1.45L10.429 1.84L13.179 5.37L15.139 4.98L12.399 1.45ZM7.49903 2.41L5.52903 2.82L8.27903 6.35L10.239 5.96L7.49903 2.41ZM2.58903 3.41L1.60903 3.6C1.35143 3.65079 1.10638 3.75194 0.887955 3.89764C0.669526 4.04334 0.482005 4.23072 0.336146 4.44905C0.190288 4.66737 0.0889605 4.91234 0.0379747 5.16991C-0.0130111 5.42747 -0.0126524 5.69257 0.0390303 5.95L0.42903 7.91L5.32903 6.94L2.58903 3.41ZM18.429 9.91V17.91H2.42903V9.91H18.429ZM20.429 7.91H0.42903V17.91C0.42903 18.4404 0.639744 18.9491 1.01482 19.3242C1.38989 19.6993 1.8986 19.91 2.42903 19.91H18.429C19.539 19.91 20.429 19.02 20.429 17.91V7.91Z" fill="#262626" stroke="TRANSPARENT" strokeWidth="0.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </FlowPane>
+         </content>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ScrollPane>
+   </children>
+</VBox>

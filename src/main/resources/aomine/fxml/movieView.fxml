@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox fillHeight="false" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aomine.view.MovieView">
+   <children>
+      <Pane>
+         <children>
+            <ImageView fx:id="ivCover" fitHeight="450.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleGoBackBtnClick" text="go back" />
+         </children>
+      </Pane>
+      <VBox>
+         <children>
+            <Text fx:id="tTitle" fill="#262626" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Formatos" />
+            <HBox fx:id="hbTypeBtnBox" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fechas" />
+            <HBox fx:id="hbShowDateBtnBox" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Horas" />
+            <HBox fx:id="hbShowTimeBtnBox" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
