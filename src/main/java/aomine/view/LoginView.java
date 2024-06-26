@@ -59,11 +59,12 @@ public class LoginView {
 
       User user = loginController.findUserByUsername(username);
 
-      loginController.verifyPassword(password, user);
+      boolean isPasswordVerified = loginController.verifyPassword(password, user);
 
-      store.setUser(user);
-      App.setRoot("moviesView");
-      
+      if (isPasswordVerified) {
+        store.setUser(user);
+        App.setRoot("moviesView");
+      }
     } catch (Exception e) {
       tfUsername.setText("");
       pfPassword.setText("");

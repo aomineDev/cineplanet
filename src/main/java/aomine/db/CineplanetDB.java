@@ -9,59 +9,72 @@ import aomine.model.ShowTime;
 import aomine.model.ShowDate;
 import aomine.model.Show;
 import aomine.model.Movie;
+import aomine.model.Seat;
 
 public class CineplanetDB {
   private static CineplanetDB instance;
-  private ArrayList<User> users;
-  private ArrayList<Movie> movies;
+  private ArrayList<User> userList;
+  private ArrayList<Movie> movieList;
+  private ArrayList<Seat> seatList;
 
   private CineplanetDB () {
-    users = new ArrayList<>();
-    movies = new ArrayList<>();
+    userList  = new ArrayList<>();
+    movieList = new ArrayList<>();
+    seatList = new ArrayList<>();
     
-    // create users
-    users.add(new User("omar", "$2a$05$AYa5TjOGJLopZjnsQScX0ujx/6QJpgjnNyGUc7LYQfdAvzJQeH8sC"));
-    users.add(new User("jhordan", "$2a$05$AYa5TjOGJLopZjnsQScX0ujx/6QJpgjnNyGUc7LYQfdAvzJQeH8sC"));
+    // create user list
+    userList.add(new User("omar", "$2a$05$AYa5TjOGJLopZjnsQScX0ujx/6QJpgjnNyGUc7LYQfdAvzJQeH8sC"));
+    userList.add(new User("jhordan", "$2a$05$AYa5TjOGJLopZjnsQScX0ujx/6QJpgjnNyGUc7LYQfdAvzJQeH8sC"));
 
     // create show variables
     ArrayList<ShowTime> showTimeList = new ArrayList<>();;
     ArrayList<ShowDate> showDateList = new ArrayList<>();;
     ArrayList<Show> showList = new ArrayList<>();;
     
-    // create 2d show time list 1
+    // created show time list for date 1 - 2d
     showTimeList.add(new ShowTime(LocalTime.of(13, 0), 1));
-    showTimeList.add(new ShowTime(LocalTime.of(17, 0), 1));
-    showTimeList.add(new ShowTime(LocalTime.of(20, 0), 1));
+    showTimeList.add(new ShowTime(LocalTime.of(17, 0), 2));
+    showTimeList.add(new ShowTime(LocalTime.of(20, 0), 3));
 
-    // create 2d show date list 1
-    showDateList.add(new ShowDate(LocalDate.of(2024, 6, 25), (ArrayList<ShowTime>) showTimeList.clone()));
+    // create show date 1 for show 2d
+    showDateList.add(new ShowDate(LocalDate.of(2024, 6, 25), showTimeList));
 
-    // create 2d show time list 2
-    showTimeList.clear();
-    showTimeList.add(new ShowTime(LocalTime.of(17, 30), 3));
-    showTimeList.add(new ShowTime(LocalTime.of(20, 30), 2));
+    // created show time list for date 2 - 2d
+    showTimeList = new ArrayList<>();
+    showTimeList.add(new ShowTime(LocalTime.of(17, 0), 4));
+    showTimeList.add(new ShowTime(LocalTime.of(20, 30), 5));
 
-    // create 2d show date list 2
-    showDateList.add(new ShowDate(LocalDate.of(2024, 6, 26), (ArrayList<ShowTime>) showTimeList.clone()));
+    // create show date list 2 for show 2d
+    showDateList.add(new ShowDate(LocalDate.of(2024, 6, 26), showTimeList));
 
     // create 2d show
-    showList.add(new Show("2d", (ArrayList<ShowDate>) showDateList.clone()));
+    showList.add(new Show("2d", showDateList));
 
     // create 3d show time list 1
-    showTimeList.clear();
-    showTimeList.add(new ShowTime(LocalTime.of(18, 0), 8));
+    showTimeList = new ArrayList<>();
+    showTimeList.add(new ShowTime(LocalTime.of(20, 0), 6));
 
     // create 3d show date list 1
-    showDateList.clear();
-    showDateList.add(new ShowDate(LocalDate.of(2024, 6, 30), (ArrayList<ShowTime>) showTimeList.clone()));
+    showDateList = new ArrayList<>();
+    showDateList.add(new ShowDate(LocalDate.of(2024, 6, 25), showTimeList));
 
     // create 3d show
-    showList.add(new Show("3d", (ArrayList<ShowDate>) showDateList.clone()));
+    showList.add(new Show("3d", showDateList));
 
-    // create movies
-    movies.add(new Movie("Cover", "cover.png", showList));
-    movies.add(new Movie("Bad Boys", "bad-boys.png", showList));
-    movies.add(new Movie("Mystery", "mystery.png", showList));
+    // create movie list
+    movieList.add(new Movie("Cover", "cover.png", showList));
+    movieList.add(new Movie("Bad Boys", "bad-boys.png", showList));
+    movieList.add(new Movie("Mystery", "mystery.png", showList));
+
+    // create seat list
+    seatList.add(new Seat(1, 1));
+    seatList.add(new Seat(2, 1));
+    seatList.add(new Seat(3, 3));
+    seatList.add(new Seat(4, 2));
+    seatList.add(new Seat(5, 5));
+    seatList.add(new Seat(6, 4));
+    seatList.add(new Seat(7, 8));
+    seatList.add(new Seat(8, 6));
   }
 
   public static CineplanetDB getInstance() {
@@ -69,11 +82,15 @@ public class CineplanetDB {
     return instance;
   }
 
-  public ArrayList<User> getUsers () {
-    return users;
+  public ArrayList<User> getUserList() {
+    return userList;
   }
 
-  public ArrayList<Movie> getMovies() {
-    return movies;
+  public ArrayList<Movie> getMovieList() {
+    return movieList;
+  }
+
+  public ArrayList<Seat> getSeatList() {
+    return seatList;
   }
 }

@@ -6,13 +6,14 @@ import aomine.db.CineplanetDB;
 import aomine.model.User;
 
 public class UserService {
-  private ArrayList<User> users;
+  private ArrayList<User> userList;
 
   public UserService() {
-    users = CineplanetDB.getInstance().getUsers();
+    userList = CineplanetDB.getInstance().getUserList();
   }
 
   public ArrayList<User> getAll() {
-    return users;
+    ArrayList<User> userListCloned = new ArrayList<>(userList);
+    return userListCloned;
   }
 }

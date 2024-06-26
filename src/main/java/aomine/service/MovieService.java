@@ -6,18 +6,18 @@ import aomine.db.CineplanetDB;
 import aomine.model.Movie;
 
 public class MovieService {
-  private ArrayList<Movie> movies;
+  private ArrayList<Movie> movieList;
   
   public MovieService () {
-    movies = CineplanetDB.getInstance().getMovies();
+    movieList = CineplanetDB.getInstance().getMovieList();
   }
 
   public ArrayList<Movie> getAll () {
-    ArrayList<Movie> clondedMovies = new ArrayList<>(movies); 
-    return clondedMovies;
+    ArrayList<Movie> movieListCloned = new ArrayList<>(movieList); 
+    return movieListCloned;
   }
 
   public void create (String name, String cover) {
-    movies.add(new Movie(name, cover));
+    movieList.add(new Movie(name, cover));
   }
 }
