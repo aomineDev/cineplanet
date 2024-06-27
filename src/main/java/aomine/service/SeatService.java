@@ -16,4 +16,12 @@ public class SeatService {
     ArrayList<Seat> seatListCloned =new ArrayList<>(seatList);
     return seatListCloned;
   }
+
+  public Seat get(int seatId) {
+    for(Seat seat: seatList) {
+      if (seat.getSeatId() == seatId) return seat;
+    }
+
+    return null;
+  }
 }

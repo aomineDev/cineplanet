@@ -35,13 +35,15 @@ public class MovieView {
   @FXML
   private HBox hbShowTimeBtnBox;
   
+  private Store store;
   private Movie movie;
   private ArrayList<Show> showList;
   private ArrayList<ShowDate> showDateList;
   private ArrayList<ShowTime> showTimeList;
 
   public void initialize() {
-    movie = Store.getInstace().getMovie();
+    store = Store.getInstace();
+    movie = store.getMovie();
 
     Image image = new Image(getClass().getResource("/aomine/images/movies/3x-" + movie.getCover()).toExternalForm());
 
@@ -85,9 +87,13 @@ public class MovieView {
 
   void handleShowTimeBtnClick(ActionEvent event) {
     Button button = (Button) event.getSource();
-    String message = (String) button.getUserData();
+    int seatId = (int) button.getUserData();
+    store.setSeatId(seatId);
+  }
 
-    System.out.println(message);
+  @FXML 
+  void hadleContinueBtnClick(ActionEvent event) throws IOException {
+    App.setRoot("seatView");
   }
 
   // Render buttons - methods
@@ -120,7 +126,7 @@ public class MovieView {
     for (ShowTime showTime: showTimeList) {
       Button button = new Button(showTime.getTime().format(DateTimeFormatter.ofPattern("hh:mm a")));
 
-      button.setUserData(showTime.getTime() + "");
+      button.setUserData(showTime.getSeatId());
       button.setOnAction(this::handleShowTimeBtnClick);
       hbShowTimeBtnBox.getChildren().add(button);
     }

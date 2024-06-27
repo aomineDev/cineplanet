@@ -24,6 +24,7 @@
             <HBox fx:id="hbShowDateBtnBox" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Horas" />
             <HBox fx:id="hbShowTimeBtnBox" />
+            <Button mnemonicParsing="false" onAction="#hadleContinueBtnClick" text="Continuar" />
          </children>
       </VBox>
    </children>

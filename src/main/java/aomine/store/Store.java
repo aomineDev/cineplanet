@@ -7,6 +7,7 @@ public class Store {
   private static Store instance;
   private User user;
   private Movie movie;
+  private int seatId; 
 
   private Store() {}
 
@@ -29,5 +30,13 @@ public class Store {
 
   public void setMovie(Movie movie) {
     this.movie = movie;
+  }
+
+  public int getSeatId() {
+    return seatId;
+  }
+
+  public void setSeatId(int seatId) {
+    this.seatId = seatId;
   }
 }
