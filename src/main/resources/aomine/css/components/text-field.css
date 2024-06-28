@@ -1,0 +1,18 @@
+.text-field {
+  -fx-border-color: rgba(0, 0, 0, 0.2);
+}
+.text-field:focused {
+  -fx-border-color:  rgba(71, 71, 255, 0.75);
+}
+
+.icon-fill-focused {
+  -fx-fill: rgba(71, 71, 255, 0.75);
+}
+
+.icon-stroke-focused {
+  -fx-stroke: rgba(71, 71, 255, 0.75);
+}
+
+.invalid {
+  -fx-fill: rgb(255, 46, 31);
+}

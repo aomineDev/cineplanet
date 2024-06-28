@@ -1,0 +1,30 @@
+.seat {
+  -fx-background-radius: 12;
+  -fx-border-width: 2;
+  -fx-border-radius: 12;
+  -fx-min-height: 24;
+  -fx-pref-height: 24;
+  -fx-pref-width: 24;
+  -fx-cursor: HAND;
+}
+
+.seat.seat-void {
+  -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+.seat.seat-empty {
+  -fx-background-color: rgba(0, 0, 0, 0);
+  -fx-border-color: rgba(71, 71, 255, 0.75);
+}
+
+.seat.seat-empty:hover {
+  -fx-border-color: rgba(71, 71, 255, 1);
+}
+
+.seat.seat-occupied {
+  -fx-background-color: rgba(255, 71,  159, 1);
+}
+
+.seat.seat-selected {
+  -fx-background-color: rgba(71, 71, 255, 1);
+}
