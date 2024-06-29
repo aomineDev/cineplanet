@@ -1,3 +1,4 @@
+/* Components */
 @import "./components/text-field.css";
 
 /* Views */
@@ -5,3 +6,7 @@
 @import "./view/movies.css";
 @import "./view/movie.css";
 @import "./view/seat.css";
+
+/* Global */
+@import "./global/font-face.css";
+@import "./global/root.css";

@@ -12,6 +12,7 @@ import aomine.App;
 import aomine.controller.LoginController;
 import aomine.model.User;
 import aomine.store.Store;
+import aomine.utils.PasswordFieldSkin;
 
 public class LoginView {
 
@@ -49,6 +50,8 @@ public class LoginView {
       if (newValue) svgPassword.getStyleClass().add("icon-stroke-focused");
       else svgPassword.getStyleClass().remove("icon-stroke-focused");
     });
+
+    pfPassword.setSkin(new PasswordFieldSkin(pfPassword));
   }
 
   @FXML
@@ -68,18 +71,19 @@ public class LoginView {
     } catch (Exception e) {
       tfUsername.setText("");
       pfPassword.setText("");
-      tInvalidUsername.getStyleClass().add("invalid");
-      tInvalidPassword.getStyleClass().add("invalid");
+
+      tInvalidUsername.getStyleClass().add("is-invalid");
+      tInvalidPassword.getStyleClass().add("is-invalid");
     }
   }
 
   @FXML
   void handleUsernameTextChange(KeyEvent event) {
-    tInvalidUsername.getStyleClass().remove("invalid");
+    tInvalidUsername.getStyleClass().remove("is-invalid");
   }
 
   @FXML
   void handlePasswordTextChange(KeyEvent event) {
-    tInvalidPassword.getStyleClass().remove("invalid");
+    tInvalidPassword.getStyleClass().remove("is-invalid");
   }
 }

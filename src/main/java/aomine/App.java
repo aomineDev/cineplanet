@@ -14,7 +14,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = loadFXML("seatView");
+        Parent root = loadFXML("loginView");
         scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("css/styles.css").toExternalForm());
         stage.setScene(scene);
