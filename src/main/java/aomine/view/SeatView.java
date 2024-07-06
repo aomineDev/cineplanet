@@ -1,5 +1,6 @@
 package aomine.view;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
 import aomine.service.SeatService;
+import aomine.App;
 import aomine.controller.SeatController;
 import aomine.model.Seat;
 
@@ -52,6 +54,11 @@ public class SeatView {
         fpSeatList.getChildren().add(button);
       }
     }
+  }
+
+  @FXML
+  void handleGoBackBtnClick (ActionEvent event) throws IOException {
+    App.setRoot("movieView");
   }
 
   void handleSeatBtnClick (ActionEvent event) {
