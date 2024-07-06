@@ -34,8 +34,8 @@ public class SeatView {
     String[][] seats = seat.getSeats();
     selectedSeats = new ArrayList<>();
 
-    tRoomNumber.setText(seat.getRoomNumber() + "");
-
+    tRoomNumber.setText("Sala N°: " + seat.getRoomNumber());
+    
     for (int i = 0; i < seats.length; i++) {
       for (int j = 0; j < seats[i].length; j++) {
         Button button = new Button("");

@@ -22,10 +22,10 @@
 }
 
 .seat.seat-occupied {
-  -fx-background-color: rgba(255, 71,  159, 1);
+  -fx-background-color: #ff479f;
 }
 
 .seat.seat-selected {
-  -fx-background-color: rgba(71, 71, 255, 1);
+  -fx-background-color: #4747ff;
   -fx-cursor: HAND;
 }
