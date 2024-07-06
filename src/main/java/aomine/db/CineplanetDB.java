@@ -48,7 +48,7 @@ public class CineplanetDB {
     showDateList.add(new ShowDate(LocalDate.of(2024, 6, 26), showTimeList));
 
     // create 2d show
-    showList.add(new Show("2d", showDateList));
+    showList.add(new Show("2D", showDateList));
 
     // create 3d show time list 1
     showTimeList = new ArrayList<>();
@@ -59,7 +59,7 @@ public class CineplanetDB {
     showDateList.add(new ShowDate(LocalDate.of(2024, 6, 25), showTimeList));
 
     // create 3d show
-    showList.add(new Show("3d", showDateList));
+    showList.add(new Show("3D", showDateList));
 
     // create movie list
     movieList.add(new Movie("Cover", "cover.png", showList));

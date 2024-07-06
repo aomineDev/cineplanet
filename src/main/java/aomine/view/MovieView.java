@@ -41,6 +41,7 @@ public class MovieView {
   private ArrayList<ShowDate> showDateList;
   private ArrayList<ShowTime> showTimeList;
 
+  @FXML
   public void initialize() {
     store = Store.getInstace();
     movie = store.getMovie();
@@ -72,6 +73,10 @@ public class MovieView {
   void handleFormatBtnClick(ActionEvent event) {
     Button button = (Button) event.getSource();
     showDateList = (ArrayList<ShowDate>) button.getUserData();
+    
+    removeActiveClassOf(hbTypeBtnBox);
+
+    button.getStyleClass().add("active");
 
     renderShowDateBtnList(showDateList);
 
@@ -82,12 +87,21 @@ public class MovieView {
     Button button = (Button) event.getSource();
     this.showTimeList = (ArrayList<ShowTime>) button.getUserData();
 
+    removeActiveClassOf(hbShowDateBtnBox);
+
+    button.getStyleClass().add("active");
+
     renderShowTimeBtnList(this.showTimeList);
   }
 
   void handleShowTimeBtnClick(ActionEvent event) {
     Button button = (Button) event.getSource();
     int seatId = (int) button.getUserData();
+
+    removeActiveClassOf(hbShowTimeBtnBox);
+
+    button.getStyleClass().add("active");
+
     store.setSeatId(seatId);
   }
 
@@ -100,11 +114,14 @@ public class MovieView {
   void renderFormatBtnList(ArrayList<Show> showList) {
 		for (Show show: showList) {
       Button button = new Button(show.getFormat());
+      button.getStyleClass().add("btn-format");
       hbTypeBtnBox.getChildren().add(button);
 
       button.setUserData(show.getShowDateList());
       button.setOnAction(this::handleFormatBtnClick);
     }
+
+    setActiveClassTo(hbTypeBtnBox);
   }
 
   void renderShowDateBtnList(ArrayList<ShowDate> showDateList) {
@@ -112,12 +129,16 @@ public class MovieView {
 
     for (ShowDate showDate: showDateList) {
       Button button = new Button(showDate.getDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+      button.getStyleClass().add("btn-date-time");
+
 
       button.setUserData(showDate.getShowTimeList());
       button.setOnAction(this::handleShowDateBtnClick);
 
       hbShowDateBtnBox.getChildren().add(button);
     }
+
+    setActiveClassTo(hbShowDateBtnBox);
   }
 
   void renderShowTimeBtnList(ArrayList<ShowTime> showTimeList) {
@@ -125,10 +146,24 @@ public class MovieView {
 
     for (ShowTime showTime: showTimeList) {
       Button button = new Button(showTime.getTime().format(DateTimeFormatter.ofPattern("hh:mm a")));
+      button.getStyleClass().add("btn-date-time");
 
       button.setUserData(showTime.getSeatId());
       button.setOnAction(this::handleShowTimeBtnClick);
       hbShowTimeBtnBox.getChildren().add(button);
     }
+
+    store.setSeatId(showTimeList.get(0).getSeatId());
+    setActiveClassTo(hbShowTimeBtnBox);
+  }
+
+  void removeActiveClassOf(HBox hbox) {
+    hbox.getChildren().forEach(el -> {
+      el.getStyleClass().remove("active");
+    });
+  }
+
+  void setActiveClassTo(HBox hbox) {
+    hbox.getChildren().get(0).getStyleClass().add("active");
   }
 }

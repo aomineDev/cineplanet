@@ -37,6 +37,7 @@ public class LoginView {
   private LoginController loginController;
   private Store store;
 
+  @FXML
   public void initialize() {
     loginController = new LoginController();
     store = Store.getInstace();
@@ -55,7 +56,7 @@ public class LoginView {
   }
 
   @FXML
-  void handleAction(ActionEvent event) {
+  void handleLoginBtnClick(ActionEvent event) {
     try {
       String username = tfUsername.getText();
       String password = pfPassword.getText();
@@ -71,19 +72,19 @@ public class LoginView {
     } catch (Exception e) {
       tfUsername.setText("");
       pfPassword.setText("");
-
-      tInvalidUsername.getStyleClass().add("is-invalid");
-      tInvalidPassword.getStyleClass().add("is-invalid");
+      
+      tInvalidUsername.setVisible(true);
+      tInvalidPassword.setVisible(true);
     }
   }
 
   @FXML
   void handleUsernameTextChange(KeyEvent event) {
-    tInvalidUsername.getStyleClass().remove("is-invalid");
+    if (tInvalidUsername.isVisible()) tInvalidUsername.setVisible(false);
   }
 
   @FXML
   void handlePasswordTextChange(KeyEvent event) {
-    tInvalidPassword.getStyleClass().remove("is-invalid");
+    if (tInvalidPassword.isVisible()) tInvalidPassword.setVisible(false);
   }
 }

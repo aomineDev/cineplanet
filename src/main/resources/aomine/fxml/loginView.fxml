@@ -33,7 +33,7 @@
                <children>
                   <Pane>
                      <children>
-                        <TextField fx:id="tfUsername" onKeyTyped="#handleUsernameTextChange" prefHeight="32.0" prefWidth="200.0" promptText="Username" style="-fx-border-width: 1; -fx-background-color: rgba(0, 0, 0, 0); -fx-border-radius: 8;" styleClass="text-field">
+                        <TextField fx:id="tfUsername" onKeyTyped="#handleUsernameTextChange" prefHeight="32.0" prefWidth="200.0" promptText="Username" style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-radius: 8;" styleClass="text-field">
                            <padding>
                               <Insets left="20.0" right="40.0" />
                            </padding>
@@ -41,7 +41,7 @@
                         <SVGPath fx:id="svgUsername" content="M8.14286 3.79126C8.14286 3.22366 7.91709 2.6793 7.51523 2.27795C7.11337 1.87659 6.56832 1.65111 6 1.65111C5.43168 1.65111 4.88664 1.87659 4.48477 2.27795C4.08291 2.6793 3.85714 3.22366 3.85714 3.79126C3.85714 4.35887 4.08291 4.90322 4.48477 5.30458C4.88664 5.70593 5.43168 5.93141 6 5.93141C6.56832 5.93141 7.11337 5.70593 7.51523 5.30458C7.91709 4.90322 8.14286 4.35887 8.14286 3.79126ZM2.57143 3.79126C2.57143 2.8831 2.93265 2.01213 3.57563 1.36996C4.21862 0.727787 5.09069 0.36702 6 0.36702C6.90931 0.36702 7.78138 0.727787 8.42437 1.36996C9.06735 2.01213 9.42857 2.8831 9.42857 3.79126C9.42857 4.69943 9.06735 5.5704 8.42437 6.21257C7.78138 6.85474 6.90931 7.2155 6 7.2155C5.09069 7.2155 4.21862 6.85474 3.57563 6.21257C2.93265 5.5704 2.57143 4.69943 2.57143 3.79126ZM1.32054 12.7799H10.6795C10.4411 11.0865 8.98393 9.78369 7.22411 9.78369H4.77589C3.01607 9.78369 1.55893 11.0865 1.32054 12.7799ZM0 13.2695C0 10.6344 2.1375 8.4996 4.77589 8.4996H7.22411C9.8625 8.4996 12 10.6344 12 13.2695C12 13.7082 11.6438 14.064 11.2045 14.064H0.795536C0.35625 14.064 0 13.7082 0 13.2695Z" fill="#00000033" layoutX="167.5" layoutY="9.017020225524902" stroke="TRANSPARENT" strokeWidth="0.0" />
                      </children>
                   </Pane>
-                  <Text fx:id="tInvalidUsername" fill="#ff302100" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 10;" text="Username incorrecto." />
+                  <Text fx:id="tInvalidUsername" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 10; -fx-fill: #ff3021;" text="Username incorrecto." visible="false" />
                </children>
             </VBox>
             <VBox fillWidth="false">
@@ -56,17 +56,17 @@
                         <SVGPath fx:id="svgPassword" content="M10.6 6.21553V5.01553C10.6 4.06075 10.2207 3.14507 9.54558 2.46994C8.87045 1.79481 7.95478 1.41553 7 1.41553C6.04522 1.41553 5.12955 1.79481 4.45442 2.46994C3.77928 3.14507 3.4 4.06075 3.4 5.01553V6.21553M8.6 10.6155C8.6 11.4992 7.88366 12.2155 7 12.2155C6.11634 12.2155 5.4 11.4992 5.4 10.6155C5.4 9.73187 6.11634 9.01553 7 9.01553C7.88366 9.01553 8.6 9.73187 8.6 10.6155ZM1 9.41553C1 7.90673 1 7.15313 1.4688 6.68433C1.9376 6.21553 2.6912 6.21553 4.2 6.21553H9.8C11.3088 6.21553 12.0624 6.21553 12.5312 6.68433C13 7.15313 13 7.90673 13 9.41553V10.2155C13 12.4779 13 13.6099 12.2968 14.3123C11.5944 15.0155 10.4624 15.0155 8.2 15.0155H5.8C3.5376 15.0155 2.4056 15.0155 1.7032 14.3123C1 13.6099 1 12.4779 1 10.2155V9.41553Z" fill="TRANSPARENT" layoutX="168.0" layoutY="9.0" stroke="#00000033" />
                      </children>
                   </Pane>
-                  <Text fx:id="tInvalidPassword" fill="#ff302100" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 10;" text="Password incorrecto." />
+                  <Text fx:id="tInvalidPassword" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 10; -fx-fill: #ff3021;" text="Password incorrecto." visible="false" />
                </children>
             </VBox>
-            <Button mnemonicParsing="false" onAction="#handleAction" prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #4747FF; -fx-background-radius: 8; -fx-font-weight: 700;" text="Log In" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginBtnClick" style="-fx-background-color: #4747FF; -fx-pref-width: 200; -fx-pref-height: 32; -fx-text-fill: white; -fx-font-weight: 700; -fx-background-radius: 8;" text="Log In">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <effect>
-                  <DropShadow height="15.0" offsetY="4.0" radius="7.0" width="15.0">
+                  <DropShadow offsetY="4.0">
                      <color>
-                        <Color red="0.2800000011920929" green="0.2800000011920929" blue="1.0" opacity="0.30000001192092896" />
+                        <Color red="0.28999999165534973" green="0.28999999165534973" blue="1.0" opacity="0.4000000059604645" />
                      </color>
                   </DropShadow>
                </effect>

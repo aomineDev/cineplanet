@@ -13,7 +13,7 @@
 
 <VBox prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aomine.view.MoviesView">
    <children>
-      <HBox alignment="CENTER_LEFT" fillHeight="false" minHeight="50.0" style="-fx-background-color: #4747FF;">
+      <HBox alignment="CENTER_LEFT" fillHeight="false" style="-fx-background-color: #4747FF; -fx-min-height: 50;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,7 +23,7 @@
             <Pane HBox.hgrow="ALWAYS" />
             <HBox alignment="CENTER" fillHeight="false" spacing="8.0">
                <children>
-                  <Text fx:id="tUsername" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 600;" text="Text" />
+                  <Text fx:id="tUsername" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 700; -fx-fill: white;" text="username" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/avatar.png" />
@@ -40,9 +40,9 @@
          <content>
             <FlowPane fx:id="fpContainer" hgap="20.0" style="-fx-background-color: white;" vgap="20.0">
                <children>
-                  <HBox alignment="CENTER_LEFT" fillHeight="false" prefWidth="700.0" spacing="8.0">
+                  <HBox alignment="CENTER_LEFT" fillHeight="false" prefWidth="750.0" spacing="8.0">
                      <children>
-                        <Text fill="#262626" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24; -fx-font-weight: 900;" text="Peliculas" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24; -fx-font-weight: 900; -fx-fill: #262626;" text="Peliculas" />
                         <SVGPath content="M19.269 0.0899963L15.339 0.869996L18.079 4.41L20.049 4.01L19.269 0.0899963ZM12.399 1.45L10.429 1.84L13.179 5.37L15.139 4.98L12.399 1.45ZM7.49903 2.41L5.52903 2.82L8.27903 6.35L10.239 5.96L7.49903 2.41ZM2.58903 3.41L1.60903 3.6C1.35143 3.65079 1.10638 3.75194 0.887955 3.89764C0.669526 4.04334 0.482005 4.23072 0.336146 4.44905C0.190288 4.66737 0.0889605 4.91234 0.0379747 5.16991C-0.0130111 5.42747 -0.0126524 5.69257 0.0390303 5.95L0.42903 7.91L5.32903 6.94L2.58903 3.41ZM18.429 9.91V17.91H2.42903V9.91H18.429ZM20.429 7.91H0.42903V17.91C0.42903 18.4404 0.639744 18.9491 1.01482 19.3242C1.38989 19.6993 1.8986 19.91 2.42903 19.91H18.429C19.539 19.91 20.429 19.02 20.429 17.91V7.91Z" fill="#262626" stroke="TRANSPARENT" strokeWidth="0.0" />
                      </children>
                   </HBox>

@@ -1,0 +1,11 @@
+.btn-core {
+  -fx-background-color:#4747FF;
+  -fx-background-radius: 8;
+  -fx-font-weight: 700;
+  -fx-pref-height: 32;
+  -fx-pref-width: 200;
+  -fx-text-fill: white;
+  -fx-cursor: HAND;
+  -fx-text-alignment: CENTER;
+  -fx-effect: dropshadow(three-pass-box, rgba(71, 71, 255, 0.3), 10, 0, 0, 4);
+}

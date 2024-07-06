@@ -1,5 +1,6 @@
 /* Components */
 @import "./components/text-field.css";
+@import "./components/button.css";
 
 /* Views */
 @import "./view/login.css";

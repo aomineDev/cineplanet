@@ -24,6 +24,7 @@ public class SeatView {
 
   private ArrayList<String> selectedSeats;
 
+  @FXML
   public void initialize() {
     SeatService seatService = new SeatService();
     selectedSeats = new ArrayList<>();

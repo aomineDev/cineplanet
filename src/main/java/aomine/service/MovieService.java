@@ -17,7 +17,14 @@ public class MovieService {
     return movieListCloned;
   }
 
+  // obtener 1 sola pelicula (movie id)
+
   public void create (String name, String cover) {
     movieList.add(new Movie(name, cover));
   }
+
+  // actualizar pelicula
+
+  // eliminar pelicula
+
 }

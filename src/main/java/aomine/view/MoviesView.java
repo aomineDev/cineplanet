@@ -20,10 +20,11 @@ public class MoviesView {
 
   @FXML
   private Text tUsername;
-  
+
   private MoviesController moviesController;
   private Store store;
 
+  @FXML
   public void initialize() {
     moviesController = new MoviesController();
     store = Store.getInstace();
