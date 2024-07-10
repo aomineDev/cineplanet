@@ -16,4 +16,12 @@ public class UserService {
     ArrayList<User> userListCloned = new ArrayList<>(userList);
     return userListCloned;
   }
+
+  public User getByUsername(String username) {
+    for (User user: userList) {
+      if (username.equals(user.getUsername())) return user;
+    }
+
+    return null;
+  }
 }

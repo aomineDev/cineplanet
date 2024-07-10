@@ -35,12 +35,10 @@ public class LoginView {
   private Text tInvalidPassword;
 
   private LoginController loginController;
-  private Store store;
 
   @FXML
   public void initialize() {
     loginController = new LoginController();
-    store = Store.getInstace();
 
     tfUsername.focusedProperty().addListener((observable, oldValue, newValue) -> {
       if (newValue) svgUsername.getStyleClass().add("icon-fill-focused");
@@ -61,12 +59,12 @@ public class LoginView {
       String username = tfUsername.getText();
       String password = pfPassword.getText();
 
-      User user = loginController.findUserByUsername(username);
+      User user = loginController.verifyUsername(username);
 
       boolean isPasswordVerified = loginController.verifyPassword(password, user);
 
       if (isPasswordVerified) {
-        store.setUser(user);
+        loginController.setStoreUser(user);
         App.setRoot("moviesView");
       }
     } catch (Exception e) {

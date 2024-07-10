@@ -32,7 +32,7 @@ public class CineplanetDB {
     ArrayList<Show> showList = new ArrayList<>();;
     
     // created show time list for date 1 - 2d
-    showTimeList.add(new ShowTime(LocalTime.of(13, 0), 1));
+    showTimeList.add(new ShowTime(LocalTime.of(13, 0), 1)); 
     showTimeList.add(new ShowTime(LocalTime.of(17, 0), 2));
     showTimeList.add(new ShowTime(LocalTime.of(20, 0), 3));
 

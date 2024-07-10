@@ -1,7 +1,7 @@
-.iv-movies {
+.iv-movie {
   -fx-cursor: HAND;
   -fx-opacity: 0.95;
 }
-.iv-movies:hover {
+.iv-movie:hover {
   -fx-opacity: 1;
 }

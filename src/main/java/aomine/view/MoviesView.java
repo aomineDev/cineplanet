@@ -12,7 +12,6 @@ import java.io.IOException;
 import aomine.App;
 import aomine.controller.MoviesController;
 import aomine.model.Movie;
-import aomine.store.Store;
 
 public class MoviesView {
   @FXML
@@ -22,14 +21,12 @@ public class MoviesView {
   private Text tUsername;
 
   private MoviesController moviesController;
-  private Store store;
 
   @FXML
   public void initialize() {
     moviesController = new MoviesController();
-    store = Store.getInstace();
   
-    tUsername.setText(store.getUser().getUsername());
+    tUsername.setText(moviesController.getStoreUserame());
 
     for(Movie movie: moviesController.getAll()) {
       Image image = new Image(getClass().getResource("/aomine/images/movies/" + movie.getCover()).toExternalForm());
@@ -37,9 +34,7 @@ public class MoviesView {
       ImageView imageView = new ImageView(image);
       imageView.setOnMouseClicked(this::handleImageViewClick);
       imageView.setUserData(movie);
-      imageView.getStyleClass().add("iv-movies");
-      imageView.setFitWidth(100);
-      imageView.setPreserveRatio(true);
+      imageView.getStyleClass().add("iv-movie");
       fpContainer.getChildren().add(imageView);
     }
   }
@@ -48,7 +43,7 @@ public class MoviesView {
     ImageView imageView = (ImageView) event.getSource();
     Movie movie = (Movie) imageView.getUserData();
     
-    store.setMovie(movie);
+    moviesController.setStoreMovie(movie);
 
     try {
       App.setRoot("movieView");

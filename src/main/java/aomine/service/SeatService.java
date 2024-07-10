@@ -17,7 +17,7 @@ public class SeatService {
     return seatListCloned;
   }
 
-  public Seat get(int seatId) {
+  public Seat getById(int seatId) {
     for(Seat seat: seatList) {
       if (seat.getSeatId() == seatId) return seat;
     }

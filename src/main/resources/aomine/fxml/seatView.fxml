@@ -3,131 +3,159 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aomine.view.SeatView">
    <children>
-      <VBox alignment="CENTER" fillWidth="false" layoutX="75.0" spacing="12.0">
+      <VBox alignment="CENTER" prefHeight="450.0" prefWidth="800.0" spacing="20.0">
          <children>
-            <Text fx:id="tRoomNumber" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4747FF; -fx-font-size: 16; -fx-font-weight: 700;" text="Text" />
-            <HBox fillHeight="false" spacing="8.0">
+            <VBox alignment="TOP_CENTER" fillWidth="false" spacing="12.0">
                <children>
-                  <GridPane vgap="8.0">
-                    <columnConstraints>
-                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <Text fx:id="tRoomNumber" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4747FF; -fx-font-size: 16; -fx-font-weight: 700;" text="Text" />
+                  <HBox fillHeight="false" spacing="8.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="A" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="B" GridPane.rowIndex="1" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="C" GridPane.rowIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="D" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="E" GridPane.rowIndex="4" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="F" GridPane.rowIndex="5" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="G" GridPane.rowIndex="6" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="H" GridPane.rowIndex="7" />
-                     </children>
-                  </GridPane>
-                  <VBox alignment="CENTER" fillWidth="false" spacing="8.0">
-                     <children>
-                        <FlowPane fx:id="fpSeatList" hgap="8.0" prefHeight="248.0" prefWidth="600.0" vgap="8.0" />
-                        <GridPane hgap="8.0">
-                           <columnConstraints>
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="100.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="24.0" prefWidth="24.0" />
-                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="24.0" prefWidth="24.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints fillHeight="false" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" valignment="CENTER" />
-                           </rowConstraints>
+                        <GridPane vgap="8.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="24.0" minHeight="24.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="2" GridPane.columnIndex="1" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="3" GridPane.columnIndex="2" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="4" GridPane.columnIndex="3" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="5" GridPane.columnIndex="4" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="6" GridPane.columnIndex="5" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="7" GridPane.columnIndex="6" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="8" GridPane.columnIndex="7" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="9" GridPane.columnIndex="8" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="10" GridPane.columnIndex="9" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="11" GridPane.columnIndex="10" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="12" GridPane.columnIndex="11" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="13" GridPane.columnIndex="12" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="14" GridPane.columnIndex="13" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="15" GridPane.columnIndex="14" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="16" GridPane.columnIndex="15" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="17" GridPane.columnIndex="16" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="18" GridPane.columnIndex="17" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="19" GridPane.columnIndex="18" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="A" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="B" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="C" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="D" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="E" GridPane.rowIndex="4" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="F" GridPane.rowIndex="5" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="G" GridPane.rowIndex="6" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="H" GridPane.rowIndex="7" />
                            </children>
                         </GridPane>
-                        <HBox alignment="CENTER" fillHeight="false" spacing="12.0">
+                        <VBox alignment="CENTER" fillWidth="false" spacing="8.0">
                            <children>
-                              <Button mnemonicParsing="false" style="-fx-background-color: transparent; -fx-pref-width: 24; -fx-pref-height: 24; -fx-border-color: rgba(71, 71, 255, 0.75); -fx-border-width: 2; -fx-min-height: 24; -fx-border-radius: 12;" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 14;" text="Disponible" />
-                              <Button mnemonicParsing="false" style="-fx-background-color: #ff479f; -fx-pref-width: 24; -fx-pref-height: 24; -fx-border-width: 2; -fx-min-height: 24; -fx-background-radius: 12;" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 14;" text="Ocupada" />
-                              <Button mnemonicParsing="false" style="-fx-background-color: #4747ff; -fx-pref-width: 24; -fx-pref-height: 24; -fx-border-width: 2; -fx-min-height: 24; -fx-background-radius: 12;" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 14;" text="Seleccionada" />
+                              <FlowPane fx:id="fpSeatList" hgap="8.0" prefHeight="248.0" prefWidth="600.0" vgap="8.0" />
+                              <GridPane hgap="8.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="0.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="24.0" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="24.0" prefWidth="24.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="24.0" prefWidth="24.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints fillHeight="false" maxHeight="24.0" minHeight="24.0" prefHeight="24.0" valignment="CENTER" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="2" GridPane.columnIndex="1" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="3" GridPane.columnIndex="2" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="4" GridPane.columnIndex="3" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="5" GridPane.columnIndex="4" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="6" GridPane.columnIndex="5" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="7" GridPane.columnIndex="6" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="8" GridPane.columnIndex="7" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="9" GridPane.columnIndex="8" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="10" GridPane.columnIndex="9" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="11" GridPane.columnIndex="10" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="12" GridPane.columnIndex="11" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="13" GridPane.columnIndex="12" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="14" GridPane.columnIndex="13" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="15" GridPane.columnIndex="14" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="16" GridPane.columnIndex="15" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="17" GridPane.columnIndex="16" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="18" GridPane.columnIndex="17" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.5); -fx-font-size: 14;" text="19" GridPane.columnIndex="18" />
+                                 </children>
+                              </GridPane>
+                              <HBox alignment="CENTER" fillHeight="false" spacing="12.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" style="-fx-background-color: transparent; -fx-pref-width: 24; -fx-pref-height: 24; -fx-border-color: rgba(71, 71, 255, 0.75); -fx-border-width: 2; -fx-min-height: 24; -fx-border-radius: 12;" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 14;" text="Disponible" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #ff479f; -fx-pref-width: 24; -fx-pref-height: 24; -fx-border-width: 2; -fx-min-height: 24; -fx-background-radius: 12;" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 14;" text="Ocupada" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #4747ff; -fx-pref-width: 24; -fx-pref-height: 24; -fx-border-width: 2; -fx-min-height: 24; -fx-background-radius: 12;" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 14;" text="Seleccionada" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="8.0" />
+                                 </padding>
+                              </HBox>
                            </children>
-                           <padding>
-                              <Insets top="8.0" />
-                           </padding>
-                        </HBox>
+                        </VBox>
                      </children>
-                  </VBox>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" fillHeight="false">
+               <children>
+                  <HBox alignment="TOP_CENTER" fillHeight="false">
+                     <children>
+                        <HBox alignment="CENTER" fillHeight="false" spacing="8.0">
+                           <children>
+                              <SVGPath content="M17 5V3C17 1.35 15.65 0 14 0H6C4.35 0 3 1.35 3 3V5C1.35 5 0 6.35 0 8V13C0 14.65 1.35 16 3 16V18H5V16H15V18H17V16C18.65 16 20 14.65 20 13V8C20 6.35 18.65 5 17 5ZM5 3C5 2.45 5.45 2 6 2H14C14.55 2 15 2.45 15 3V5.78C14.39 6.33 14 7.12 14 8V10H6V8C6 7.12 5.61 6.33 5 5.78V3ZM18 13C18 13.55 17.55 14 17 14H3C2.45 14 2 13.55 2 13V8C2 7.45 2.45 7 3 7C3.55 7 4 7.45 4 8V12H16V8C16 7.45 16.45 7 17 7C17.55 7 18 7.45 18 8V13Z" style="-fx-fill: #4747FF;" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #4747FF; -fx-font-weight: 700;" text="Butacas Selecionadas:" />
+                           </children>
+                        </HBox>
+                        <TextField fx:id="tfSelectedSeat" editable="false" prefWidth="300.0" style="-fx-font-size: 14; -fx-background-color: transparent; -fx-border-width: 0;" />
+                     </children>
+                  </HBox>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button alignment="CENTER" mnemonicParsing="false" style="-fx-content-display: right; -fx-background-color: #4747ff; -fx-text-fill: white; -fx-pref-width: 200; -fx-min-width: 200; -fx-pref-height: 32; -fx-font-weight: 700; -fx-background-radius: 8;" text="Continuar">
+                     <graphic>
+                        <SVGPath content="M5.10211 0.935372L5.69669 0.340796C5.94844 0.0890381 6.35554 0.0890381 6.60462 0.340796L11.8112 5.54468C12.0629 5.79644 12.0629 6.20353 11.8112 6.45261L6.60462 11.6592C6.35286 11.9109 5.94577 11.9109 5.69669 11.6592L5.10211 11.0646C4.84767 10.8102 4.85303 10.395 5.11282 10.146L8.34014 7.0713H0.642785C0.286575 7.0713 0 6.78472 0 6.42851V5.57146C0 5.21525 0.286575 4.92868 0.642785 4.92868H8.34014L5.11282 1.85402C4.85035 1.60494 4.845 1.18981 5.10211 0.935372Z" style="-fx-fill: white;" translateX="2.0" translateY="1.0" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow offsetY="4.0">
+                           <color>
+                              <Color red="0.2800000011920929" green="0.2800000011920929" blue="1.0" opacity="0.30000001192092896" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
                </children>
             </HBox>
          </children>
          <padding>
-            <Insets top="12.0" />
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <HBox layoutX="75.0" layoutY="393.0" spacing="8.0">
-         <children>
-            <HBox alignment="CENTER" fillHeight="false" spacing="8.0">
-               <children>
-                  <SVGPath content="M17 5V3C17 1.35 15.65 0 14 0H6C4.35 0 3 1.35 3 3V5C1.35 5 0 6.35 0 8V13C0 14.65 1.35 16 3 16V18H5V16H15V18H17V16C18.65 16 20 14.65 20 13V8C20 6.35 18.65 5 17 5ZM5 3C5 2.45 5.45 2 6 2H14C14.55 2 15 2.45 15 3V5.78C14.39 6.33 14 7.12 14 8V10H6V8C6 7.12 5.61 6.33 5 5.78V3ZM18 13C18 13.55 17.55 14 17 14H3C2.45 14 2 13.55 2 13V8C2 7.45 2.45 7 3 7C3.55 7 4 7.45 4 8V12H16V8C16 7.45 16.45 7 17 7C17.55 7 18 7.45 18 8V13Z" style="-fx-fill: #4747FF;" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #4747FF; -fx-font-weight: 700;" text="Butacas Selecionadas:" />
-               </children>
-            </HBox>
-            <Text fx:id="tSelectedSeats" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #262626; -fx-font-size: 16;" />
-         </children>
-      </HBox>
       <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleGoBackBtnClick" style="-fx-border-color: #4747ff; -fx-border-width: 2; -fx-pref-width: 36; -fx-pref-height: 36; -fx-border-radius: 18; -fx-background-color: transparent;">
          <graphic>
             <SVGPath content="M9.19719 1.24718L8.40442 0.454413C8.06874 0.118737 7.52594 0.118737 7.19384 0.454413L0.251758 7.39293C-0.0839192 7.7286 -0.0839192 8.2714 0.251758 8.6035L7.19384 15.5456C7.52952 15.8813 8.07231 15.8813 8.40442 15.5456L9.19719 14.7528C9.53644 14.4136 9.52929 13.8601 9.1829 13.528L4.87981 9.42841H15.143C15.6179 9.42841 16 9.04631 16 8.57137V7.42864C16 6.95369 15.6179 6.57159 15.143 6.57159H4.87981L9.1829 2.47205C9.53286 2.13994 9.54001 1.58643 9.19719 1.24718Z" style="-fx-fill: #4747ff;" />

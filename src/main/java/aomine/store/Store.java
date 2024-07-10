@@ -1,17 +1,24 @@
 package aomine.store;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 import aomine.model.Movie;
+import aomine.model.ShowTime;
 import aomine.model.User;
 
 public class Store {
   private static Store instance;
   private User user;
   private Movie movie;
-  private int seatId; 
+  private String format;
+  private LocalDate date;
+  private ShowTime showTime;
+  private ArrayList<String> selectedSeats;
 
   private Store() {}
 
-  public static Store getInstace() {
+  public static Store getInstance() {
     if (instance == null) instance = new Store();
     return instance;
   }
@@ -32,11 +39,35 @@ public class Store {
     this.movie = movie;
   }
 
-  public int getSeatId() {
-    return seatId;
+  public String getFormat() {
+    return format;
   }
 
-  public void setSeatId(int seatId) {
-    this.seatId = seatId;
+  public void setFormat(String format) {
+    this.format = format;
+  }
+
+  public LocalDate getDate() {
+    return date;
+  }
+
+  public void setDate(LocalDate date) {
+    this.date = date;
+  }
+
+  public ShowTime getShowTime() {
+    return showTime;
+  }
+
+  public void setShowTime(ShowTime showTime) {
+    this.showTime = showTime;
+  }
+
+  public ArrayList<String> getSelectedSeats() {
+    return selectedSeats;
+  }
+
+  public void setSelectedSeats(ArrayList<String> selectedSeats) {
+    this.selectedSeats = selectedSeats;
   }
 }

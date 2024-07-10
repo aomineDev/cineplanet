@@ -13,7 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 import aomine.App;
-import aomine.store.Store;
+import aomine.controller.MovieController;
 import aomine.model.Movie;
 import aomine.model.Show;
 import aomine.model.ShowDate;
@@ -35,7 +35,7 @@ public class MovieView {
   @FXML
   private HBox hbShowTimeBtnBox;
   
-  private Store store;
+  private MovieController movieController;
   private Movie movie;
   private ArrayList<Show> showList;
   private ArrayList<ShowDate> showDateList;
@@ -43,8 +43,8 @@ public class MovieView {
 
   @FXML
   public void initialize() {
-    store = Store.getInstace();
-    movie = store.getMovie();
+    movieController = new MovieController();
+    movie = movieController.getStoreMovie();
 
     Image image = new Image(getClass().getResource("/aomine/images/movies/3x-" + movie.getCover()).toExternalForm());
 
@@ -70,13 +70,21 @@ public class MovieView {
 		App.setRoot("moviesView");
   }
 
+  @FXML 
+  void hadleContinueBtnClick(ActionEvent event) throws IOException {
+    App.setRoot("seatView");
+  }
+
   void handleFormatBtnClick(ActionEvent event) {
     Button button = (Button) event.getSource();
-    showDateList = (ArrayList<ShowDate>) button.getUserData();
+    Show show = (Show) button.getUserData();
+    showDateList = show.getShowDateList();
     
     removeActiveClassOf(hbTypeBtnBox);
 
     button.getStyleClass().add("active");
+
+    movieController.setStoreFormat(show.getFormat());
 
     renderShowDateBtnList(showDateList);
 
@@ -85,29 +93,28 @@ public class MovieView {
 
   void handleShowDateBtnClick(ActionEvent event) {
     Button button = (Button) event.getSource();
-    this.showTimeList = (ArrayList<ShowTime>) button.getUserData();
+    ShowDate showDate = (ShowDate) button.getUserData();
+    showTimeList = showDate.getShowTimeList();
 
     removeActiveClassOf(hbShowDateBtnBox);
 
     button.getStyleClass().add("active");
+
+    movieController.setStoreDate(showDate.getDate());
 
     renderShowTimeBtnList(this.showTimeList);
   }
 
   void handleShowTimeBtnClick(ActionEvent event) {
     Button button = (Button) event.getSource();
-    int seatId = (int) button.getUserData();
+    ShowTime showTime = (ShowTime) button.getUserData();
+    
 
     removeActiveClassOf(hbShowTimeBtnBox);
 
     button.getStyleClass().add("active");
 
-    store.setSeatId(seatId);
-  }
-
-  @FXML 
-  void hadleContinueBtnClick(ActionEvent event) throws IOException {
-    App.setRoot("seatView");
+    movieController.setStoreShowTime(showTime);
   }
 
   // Render buttons - methods
@@ -117,10 +124,11 @@ public class MovieView {
       button.getStyleClass().add("btn-format");
       hbTypeBtnBox.getChildren().add(button);
 
-      button.setUserData(show.getShowDateList());
+      button.setUserData(show);
       button.setOnAction(this::handleFormatBtnClick);
     }
 
+    movieController.setStoreFormat(showList.get(0).getFormat());
     setActiveClassTo(hbTypeBtnBox);
   }
 
@@ -132,12 +140,13 @@ public class MovieView {
       button.getStyleClass().add("btn-date-time");
 
 
-      button.setUserData(showDate.getShowTimeList());
+      button.setUserData(showDate);
       button.setOnAction(this::handleShowDateBtnClick);
 
       hbShowDateBtnBox.getChildren().add(button);
     }
 
+    movieController.setStoreDate(showDateList.get(9).getDate());
     setActiveClassTo(hbShowDateBtnBox);
   }
 
@@ -148,12 +157,12 @@ public class MovieView {
       Button button = new Button(showTime.getTime().format(DateTimeFormatter.ofPattern("hh:mm a")));
       button.getStyleClass().add("btn-date-time");
 
-      button.setUserData(showTime.getSeatId());
+      button.setUserData(showTime);
       button.setOnAction(this::handleShowTimeBtnClick);
       hbShowTimeBtnBox.getChildren().add(button);
     }
 
-    store.setSeatId(showTimeList.get(0).getSeatId());
+    movieController.setStoreShowTime(showTimeList.get(0));
     setActiveClassTo(hbShowTimeBtnBox);
   }
 
