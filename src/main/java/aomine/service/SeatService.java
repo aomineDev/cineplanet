@@ -13,7 +13,8 @@ public class SeatService {
   }
 
   public ArrayList<Seat> getAll() {
-    ArrayList<Seat> seatListCloned =new ArrayList<>(seatList);
+    ArrayList<Seat> seatListCloned = new ArrayList<>(seatList);
+  
     return seatListCloned;
   }
 

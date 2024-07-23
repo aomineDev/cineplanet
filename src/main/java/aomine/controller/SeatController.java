@@ -8,16 +8,16 @@ import aomine.store.Store;
 import aomine.service.SeatService;
 
 public class SeatController {
-  private HashMap<Integer, String> rowMap;
   private Store store;
   private SeatService seatService;
   private ArrayList<String> selectedSeats;
-
+  private HashMap<Integer, String> rowMap;
+  
   public SeatController() {
-    rowMap = new HashMap<>();
     store = Store.getInstance();
     seatService = new SeatService();
     selectedSeats = store.getSelectedSeats();
+    rowMap = new HashMap<>();
     
     rowMap.put(0, "A");
     rowMap.put(1, "B");
@@ -29,8 +29,8 @@ public class SeatController {
     rowMap.put(7, "H");
   }
 
-  public String getRow (Integer index) {
-    return rowMap.get(index);
+  public String getSeatPos (int row, int column) {
+    return rowMap.get(row) + "" + (column + 1);
   }
 
   public int getStoreSeatId() {
@@ -41,8 +41,18 @@ public class SeatController {
     return seatService.getById(seatId);
   }
 
+  public Seat getSeat() {
+    int seatId = getStoreSeatId();
+
+    return getSeatById(seatId);
+  }
+
   public ArrayList<String> getStoreSelectedSeats() {
     return selectedSeats;
+  }
+
+  public String getStoreSelectedSeatsToString() {
+    return store.getSelectedSeatsToString();
   }
 
   public void addStoreSelectedSeat(String seatPos) {
@@ -53,5 +63,34 @@ public class SeatController {
     int seatPosIndex = selectedSeats.indexOf(seatPos);
 
     selectedSeats.remove(seatPosIndex);
+  }
+
+  public void clearStoreSelectedSeat() {
+    selectedSeats.clear();
+  }
+
+  public String[][] getClonedSeatMatrix(String[][] seatMatrix) {
+    String[][] clonedSeatMatrix = new String[8][19]; 
+    
+    for(int i = 0; i < seatMatrix.length; i++) {
+      for (int j = 0; j < seatMatrix[i].length; j++) {
+        clonedSeatMatrix[i][j] = seatMatrix[i][j];
+      }
+    }
+
+    return clonedSeatMatrix;
+  }
+
+  public void setSelectedSeatsToMatrix(String[][] seatMatrix){
+    for (String seatPos: this.getStoreSelectedSeats()) {
+      int row = store.getSelectedSeatRowIndex(seatPos);
+      int column = store.getSelectedSeatColumnIndex(seatPos);
+
+      seatMatrix[row][column] = "S";
+    }
+  }
+
+  public void setRoomNumber(int roomMumber) {
+    store.setRoomNumber(roomMumber);
   }
 }

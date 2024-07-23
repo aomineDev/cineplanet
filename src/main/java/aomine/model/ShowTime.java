@@ -1,6 +1,7 @@
 package aomine.model;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class ShowTime {
   private LocalTime time;
@@ -17,5 +18,12 @@ public class ShowTime {
 
   public int getSeatId() {
     return seatId;
+  }
+
+  public String getFormattedTime() {
+    String pattern = "h:mm a";
+    DateTimeFormatter format = DateTimeFormatter.ofPattern(pattern);
+
+    return this.time.format(format);
   }
 }

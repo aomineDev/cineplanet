@@ -3,7 +3,7 @@ package aomine.model;
 public class Seat {
   private int seatId;
   private int roomNumber;
-  private String[][] seats= {
+  private String[][] seatMatrix = {
     {"V", "E", "E", "E", "E", "E", "V", "V", "V", "V", "V", "V", "E", "E", "E", "E", "V", "V", "V"},
     {"V", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "V", "V", "V"},
     {"V", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "E", "V", "V", "V"},
@@ -27,7 +27,11 @@ public class Seat {
     return seatId;
   }
 
-  public String[][] getSeats() {
-    return seats;
+  public String[][] getSeatMatrix() {
+    return seatMatrix;
+  }
+
+  public void updateSeatsSelected(int row, int column) {
+    this.seatMatrix[row][column] = "O";
   }
 }

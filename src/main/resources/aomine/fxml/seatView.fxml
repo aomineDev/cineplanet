@@ -23,7 +23,7 @@
          <children>
             <VBox alignment="TOP_CENTER" fillWidth="false" spacing="12.0">
                <children>
-                  <Text fx:id="tRoomNumber" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4747FF; -fx-font-size: 16; -fx-font-weight: 700;" text="Text" />
+                  <Text fx:id="tRoomNumber" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4747FF; -fx-font-size: 16; -fx-font-weight: 700;" text="Room number" />
                   <HBox fillHeight="false" spacing="8.0">
                      <children>
                         <GridPane vgap="8.0">
@@ -122,19 +122,15 @@
             </VBox>
             <HBox alignment="CENTER" fillHeight="false">
                <children>
-                  <HBox alignment="TOP_CENTER" fillHeight="false">
+                  <HBox alignment="CENTER" fillHeight="false">
                      <children>
-                        <HBox alignment="CENTER" fillHeight="false" spacing="8.0">
-                           <children>
-                              <SVGPath content="M17 5V3C17 1.35 15.65 0 14 0H6C4.35 0 3 1.35 3 3V5C1.35 5 0 6.35 0 8V13C0 14.65 1.35 16 3 16V18H5V16H15V18H17V16C18.65 16 20 14.65 20 13V8C20 6.35 18.65 5 17 5ZM5 3C5 2.45 5.45 2 6 2H14C14.55 2 15 2.45 15 3V5.78C14.39 6.33 14 7.12 14 8V10H6V8C6 7.12 5.61 6.33 5 5.78V3ZM18 13C18 13.55 17.55 14 17 14H3C2.45 14 2 13.55 2 13V8C2 7.45 2.45 7 3 7C3.55 7 4 7.45 4 8V12H16V8C16 7.45 16.45 7 17 7C17.55 7 18 7.45 18 8V13Z" style="-fx-fill: #4747FF;" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #4747FF; -fx-font-weight: 700;" text="Butacas Selecionadas:" />
-                           </children>
-                        </HBox>
+                        <SVGPath content="M17 5V3C17 1.35 15.65 0 14 0H6C4.35 0 3 1.35 3 3V5C1.35 5 0 6.35 0 8V13C0 14.65 1.35 16 3 16V18H5V16H15V18H17V16C18.65 16 20 14.65 20 13V8C20 6.35 18.65 5 17 5ZM5 3C5 2.45 5.45 2 6 2H14C14.55 2 15 2.45 15 3V5.78C14.39 6.33 14 7.12 14 8V10H6V8C6 7.12 5.61 6.33 5 5.78V3ZM18 13C18 13.55 17.55 14 17 14H3C2.45 14 2 13.55 2 13V8C2 7.45 2.45 7 3 7C3.55 7 4 7.45 4 8V12H16V8C16 7.45 16.45 7 17 7C17.55 7 18 7.45 18 8V13Z" style="-fx-fill: #4747FF;" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-fill: #4747FF; -fx-font-weight: 700;" text="Butacas Selecionadas:" />
                         <TextField fx:id="tfSelectedSeat" editable="false" prefWidth="300.0" style="-fx-font-size: 14; -fx-background-color: transparent; -fx-border-width: 0;" />
                      </children>
                   </HBox>
                   <Pane HBox.hgrow="ALWAYS" />
-                  <Button alignment="CENTER" mnemonicParsing="false" style="-fx-content-display: right; -fx-background-color: #4747ff; -fx-text-fill: white; -fx-pref-width: 200; -fx-min-width: 200; -fx-pref-height: 32; -fx-font-weight: 700; -fx-background-radius: 8;" text="Continuar">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleContinueBtnClick" style="-fx-content-display: right; -fx-background-color: #4747ff; -fx-text-fill: white; -fx-pref-width: 200; -fx-min-width: 200; -fx-pref-height: 32; -fx-font-weight: 700; -fx-background-radius: 8;" text="Continuar">
                      <graphic>
                         <SVGPath content="M5.10211 0.935372L5.69669 0.340796C5.94844 0.0890381 6.35554 0.0890381 6.60462 0.340796L11.8112 5.54468C12.0629 5.79644 12.0629 6.20353 11.8112 6.45261L6.60462 11.6592C6.35286 11.9109 5.94577 11.9109 5.69669 11.6592L5.10211 11.0646C4.84767 10.8102 4.85303 10.395 5.11282 10.146L8.34014 7.0713H0.642785C0.286575 7.0713 0 6.78472 0 6.42851V5.57146C0 5.21525 0.286575 4.92868 0.642785 4.92868H8.34014L5.11282 1.85402C4.85035 1.60494 4.845 1.18981 5.10211 0.935372Z" style="-fx-fill: white;" translateX="2.0" translateY="1.0" />
                      </graphic>

@@ -1,10 +1,10 @@
-.text-field,
-.password-field {
+.text--field,
+.password--field {
   -fx-border-color: rgba(38, 38, 38, 0.3);
 
 }
-.text-field:focused,
-.password-field:focused {
+.text--field:focused,
+.password--field:focused {
   -fx-border-color:  rgba(71, 71, 255, 1);
 }
 

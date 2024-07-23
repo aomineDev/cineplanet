@@ -38,14 +38,14 @@
          <children>
             <HBox spacing="30.0">
                <children>
-                  <VBox fillWidth="false" spacing="12.0">
+                  <VBox fillWidth="false" spacing="8.0">
                      <children>
-                        <Text fx:id="tTitle" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 16; -fx-font-weight: 700; -fx-fill: #4747ff;" text="Title" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.75);" text="Genero | duracion" />
+                        <Text fx:id="tTitle" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: 700; -fx-fill: #4747ff;" text="Title" />
+                        <Text fx:id="tGenderDuration" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: rgba(38, 38, 38, 0.75);" text="Genero | duracion" />
                      </children>
                   </VBox>
                   <Separator orientation="VERTICAL" />
-                  <VBox fillWidth="false" spacing="12.0">
+                  <VBox fillWidth="false" spacing="8.0">
                      <children>
                         <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="8.0">
                            <children>
@@ -53,7 +53,7 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 700; -fx-fill: #262626;" text="Entrada:" />
                            </children>
                         </HBox>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FF479F; -fx-font-weight: 700; -fx-font-size: 28;" text="S/. 00.00" />
+                        <Text fx:id="tTicketPrice" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #FF479F; -fx-font-weight: 700; -fx-font-size: 28;" text="S/. 00.00" />
                      </children>
                   </VBox>
                </children>
@@ -64,21 +64,21 @@
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 700; -fx-fill: #262626;" text="Formato:" />
                </children>
             </HBox>
-            <HBox fx:id="hbTypeBtnBox" spacing="12.0" />
+            <HBox fx:id="hbFormatBox" spacing="12.0" />
             <HBox alignment="CENTER_LEFT" spacing="8.0">
                <children>
                   <SVGPath content="M5.2 1.5V4.3M10.8 1.5V4.3M1 7.1H15M3.8 2.9H12.2C13.7464 2.9 15 4.1536 15 5.7V12.7C15 14.2464 13.7464 15.5 12.2 15.5H3.8C2.2536 15.5 1 14.2464 1 12.7V5.7C1 4.1536 2.2536 2.9 3.8 2.9Z" style="-fx-fill: transparent; -fx-stroke: #262626; -fx-stroke-width: 1.5;" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 700; -fx-fill: #262626;" text="Fecha:" />
                </children>
             </HBox>
-            <HBox fx:id="hbShowDateBtnBox" spacing="12.0" />
+            <HBox fx:id="hbShowDateBox" spacing="12.0" />
             <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="8.0">
                <children>
                   <SVGPath content="M7 0.5C3.15 0.5 0 3.65 0 7.5C0 11.35 3.15 14.5 7 14.5C10.85 14.5 14 11.35 14 7.5C14 3.65 10.85 0.5 7 0.5ZM7 13.1C3.913 13.1 1.4 10.587 1.4 7.5C1.4 4.413 3.913 1.9 7 1.9C10.087 1.9 12.6 4.413 12.6 7.5C12.6 10.587 10.087 13.1 7 13.1ZM7.35 4H6.3V8.2L9.94 10.44L10.5 9.53L7.35 7.64V4Z" style="-fx-fill: #262626;" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-font-weight: 700; -fx-fill: #262626;" text="Hora:" />
                </children>
             </HBox>
-            <HBox fx:id="hbShowTimeBtnBox" spacing="12.0" />
+            <HBox fx:id="hbShowTimeBox" spacing="12.0" />
             <HBox alignment="CENTER_LEFT" fillHeight="false" nodeOrientation="RIGHT_TO_LEFT">
                <children>
                   <Button alignment="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#hadleContinueBtnClick" style="-fx-background-color: #4747FF; -fx-background-radius: 8; -fx-pref-width: 200; -fx-pref-height: 32; -fx-text-fill: white; -fx-font-weight: 700; -fx-content-display: right;" text="Continuar">

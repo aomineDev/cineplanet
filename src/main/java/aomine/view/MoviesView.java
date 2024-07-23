@@ -44,7 +44,6 @@ public class MoviesView {
     Movie movie = (Movie) imageView.getUserData();
     
     moviesController.setStoreMovie(movie);
-
     try {
       App.setRoot("movieView");
     } catch (IOException e) {

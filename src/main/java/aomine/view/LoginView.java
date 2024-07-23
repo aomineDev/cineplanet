@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
 import aomine.App;
 import aomine.controller.LoginController;
 import aomine.model.User;
-import aomine.store.Store;
 import aomine.utils.PasswordFieldSkin;
 
 public class LoginView {

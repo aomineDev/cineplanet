@@ -1,7 +1,6 @@
 package aomine.view;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,36 +28,49 @@ public class SeatView {
   @FXML
   public void initialize() {
     seatController = new SeatController();
+    Seat seat = seatController.getSeat();
 
-    int seatId = seatController.getStoreSeatId();
-    Seat seat = seatController.getSeatById(seatId);
-
-    String[][] seats = seat.getSeats();
+    String[][] seatMatrix = seatController.getClonedSeatMatrix(seat.getSeatMatrix());
 
     tRoomNumber.setText("Sala N°: " + seat.getRoomNumber());
+    seatController.setRoomNumber(seat.getRoomNumber());
+
+    seatController.setSelectedSeatsToMatrix(seatMatrix);
     
-    for (int i = 0; i < seats.length; i++) {
-      for (int j = 0; j < seats[i].length; j++) {
+    for (int i = 0; i < seatMatrix.length; i++) {
+      for (int j = 0; j < seatMatrix[i].length; j++) {
         Button button = new Button("");
         button.getStyleClass().add("seat");
 
-        if (seats[i][j].equals("V")) button.getStyleClass().add("seat-void");
-        else if (seats[i][j].equals("E")) {
+        if (seatMatrix[i][j].equals("V")) button.getStyleClass().add("seat-void");
+        else if (seatMatrix[i][j].equals("E")) {
           button.getStyleClass().add("seat-empty");
-          button.setUserData(seatController.getRow(i) + "" + (j + 1));
+          button.setUserData(seatController.getSeatPos(i, j));
           button.setOnAction(this::handleSeatBtnClick);
         }
-        else if (seats[i][j].equals("S")) button.getStyleClass().add("seat-selected");
-        else if (seats[i][j].equals("O")) button.getStyleClass().add("seat-occupied");
+        else if (seatMatrix[i][j].equals("S")) {
+          button.getStyleClass().add("seat-selected");
+          button.setUserData(seatController.getSeatPos(i, j));
+          button.setOnAction(this::handleSeatBtnClick);
+        }
+        else if (seatMatrix[i][j].equals("O")) button.getStyleClass().add("seat-occupied");
 
         fpSeatList.getChildren().add(button);
       }
     }
+
+    tfSelectedSeat.setText(seatController.getStoreSelectedSeatsToString());
   }
 
   @FXML 
   void handleGoBackBtnClick (ActionEvent event) throws IOException {
+    seatController.clearStoreSelectedSeat();
     App.setRoot("movieView");
+  }
+
+  @FXML
+  void handleContinueBtnClick(ActionEvent event) throws IOException {
+    if (seatController.getStoreSelectedSeats().size() > 0) App.setRoot("voucherView");
   }
 
   void handleSeatBtnClick (ActionEvent event) {
@@ -77,12 +89,6 @@ public class SeatView {
       seatController.removeStoreSelectedSeat(seatPos);
     }
 
-    tfSelectedSeat.setText(getSelectedSeatsToString());
-  }
-
-  String getSelectedSeatsToString() {
-    String str = seatController.getStoreSelectedSeats().toString();
-    
-    return str.substring(1, str.length() - 1);
+    tfSelectedSeat.setText(seatController.getStoreSelectedSeatsToString());
   }
 }

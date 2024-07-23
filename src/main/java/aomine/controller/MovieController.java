@@ -21,8 +21,12 @@ public class MovieController {
     store.setFormat(format);
   }
 
-  public void setStoreDate(LocalDate date) {
+  public void setStoreDate(String date) {
     store.setDate(date);
+  }
+
+  public void setStoreTicketPrice(double ticketPrice) {
+    store.setTicketPrice(ticketPrice);
   }
 
   public void setStoreShowTime(ShowTime showTime) {
