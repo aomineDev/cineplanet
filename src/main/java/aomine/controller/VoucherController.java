@@ -19,16 +19,20 @@ import java.util.ArrayList;
 
 import aomine.store.Store;
 import aomine.model.Seat;
+import aomine.model.Voucher;
 import aomine.service.SeatService;
+import aomine.service.VoucherService;
 
 public class VoucherController {
   private Store store;
   private SeatService seatService;
+  private VoucherService voucherService;  
   private ArrayList<String> selectedSeats;
 
   public VoucherController() {
     store = Store.getInstance();
     seatService = new SeatService();
+    voucherService = new VoucherService();
     selectedSeats = store.getSelectedSeats();
   }
 
@@ -48,16 +52,16 @@ public class VoucherController {
     return store.getShowTime().getFormattedTime();
   }
 
-  public int getStoreRoomNumber() {
-    return store.getRoomNumber();
+  public String getStoreRoomNumber() {
+    return "sala " + store.getRoomNumber();
   }
 
   public String getStoreFormat() {
-    return store.getFormat();
+    return store.getFormat() + " General";
   }
 
-  public int getStoreQunatity() {
-    return selectedSeats.size();
+  public String getStoreQunatity() {
+    return selectedSeats.size() + "";
   }
 
   public String getStoreticketPrice() {
@@ -66,7 +70,7 @@ public class VoucherController {
   }
 
   public String getTotalPrice() {
-    double totalPrice =  store.getTicketPrice() * getStoreQunatity();
+    double totalPrice =  store.getTicketPrice() * selectedSeats.size();
 
     return store.getMovie().getFormatedTicketPrice(totalPrice);
   }
@@ -85,8 +89,17 @@ public class VoucherController {
     selectedSeats.clear();
   }
 
-  public void createVoucher() {
-
+  public void createVoucher(String clientName) {
+    voucherService.create(new Voucher(
+      clientName,
+      getStoreMovieTitle(), 
+      getStoreFormat(), 
+      getStoreDate(), 
+      getStoreTime(), 
+      selectedSeats, 
+      store.getTicketPrice(), 
+      store.getRoomNumber()
+    ));
   }
 
   private WritableImage captureView(Node view) {

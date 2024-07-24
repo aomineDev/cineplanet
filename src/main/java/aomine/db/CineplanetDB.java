@@ -5,6 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 import aomine.model.User;
+import aomine.model.Voucher;
 import aomine.model.ShowTime;
 import aomine.model.ShowDate;
 import aomine.model.Show;
@@ -19,6 +20,7 @@ public class CineplanetDB {
   private ArrayList<ShowDate> showDateList;
   private ArrayList<ShowTime> showTimeList;
   private ArrayList<Seat> seatList;
+  private ArrayList<Voucher> voucherList;
 
   private CineplanetDB () {
     userList  = new ArrayList<>();
@@ -27,6 +29,7 @@ public class CineplanetDB {
     showDateList = new ArrayList<>();
     showTimeList = new ArrayList<>();
     seatList = new ArrayList<>();
+    voucherList = new ArrayList<>();
     
     // create user list
     fillUserList();
@@ -53,6 +56,10 @@ public class CineplanetDB {
 
   public ArrayList<Seat> getSeatList() {
     return seatList;
+  }
+
+  public ArrayList<Voucher> getVoucherList() {
+    return voucherList;
   }
 
   private void fillUserList() {

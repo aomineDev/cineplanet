@@ -53,10 +53,10 @@ public class VoucherView {
     tTitle.setText(voucherController.getStoreMovieTitle());
     tDate.setText(voucherController.getStoreDate());
     tTime.setText(voucherController.getStoreTime());
-    tRoomNumber.setText("sala " + voucherController.getStoreRoomNumber());
-    tSelectedSeats.setText(voucherController.getStoreSelectedSeats() + "");
-    tFormat.setText(voucherController.getStoreFormat() + " General");
-    tQuantity.setText(voucherController.getStoreQunatity() + "");
+    tRoomNumber.setText(voucherController.getStoreRoomNumber());
+    tSelectedSeats.setText(voucherController.getStoreSelectedSeats());
+    tFormat.setText(voucherController.getStoreFormat());
+    tQuantity.setText(voucherController.getStoreQunatity());
     tTicketPrice.setText(voucherController.getStoreticketPrice());
     tTotalPrice.setText(voucherController.getTotalPrice());
   }
@@ -68,12 +68,14 @@ public class VoucherView {
 
   @FXML
   void handleFinishClick(ActionEvent event) throws IOException {
-    voucherController.setOccupiedSeats();
-    voucherController.createVoucher();
-    voucherController.saveAsPng(App.getRoot().lookup("#vbVoucher"), "voucher");
-    voucherController.saveAsPdf(App.getRoot().lookup("#vbVoucher"), "voucher");
-    
-    App.setRoot("moviesView");
+    if (tfClient.getText().length() > 0) {
+      voucherController.setOccupiedSeats();
+      voucherController.createVoucher(tClient.getText());
+      voucherController.saveAsPng(App.getRoot().lookup("#vbVoucher"), "voucher");
+      voucherController.saveAsPdf(App.getRoot().lookup("#vbVoucher"), "voucher");
+      
+      App.setRoot("moviesView");
+    }
   }
 
   @FXML
