@@ -70,6 +70,8 @@ public class VoucherView {
   void handleFinishClick(ActionEvent event) throws IOException {
     voucherController.setOccupiedSeats();
     voucherController.createVoucher();
+    voucherController.saveAsPng(App.getRoot().lookup("#vbVoucher"), "voucher");
+    voucherController.saveAsPdf(App.getRoot().lookup("#vbVoucher"), "voucher");
     
     App.setRoot("moviesView");
   }

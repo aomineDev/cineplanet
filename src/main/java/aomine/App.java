@@ -11,11 +11,11 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
+    private static Parent root;
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = loadFXML("loginView");
-        scene = new Scene(root);
+        scene = new Scene(loadFXML("loginView"));
         scene.getStylesheets().add(getClass().getResource("css/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Cineplanet");
@@ -28,7 +28,14 @@ public class App extends Application {
 
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("fxml/" + fxml + ".fxml"));
-        return fxmlLoader.load();
+
+        root = fxmlLoader.load();
+
+        return root;
+    }
+
+    public static Parent getRoot() {
+      return root;
     }
 
     public static void main(String[] args) {

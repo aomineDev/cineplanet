@@ -17,7 +17,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aomine.view.VoucherView">
    <children>
-      <VBox alignment="CENTER" layoutX="90.0" layoutY="56.0" prefHeight="0.0" prefWidth="0.0" spacing="12.0">
+      <VBox fx:id="vbVoucher" alignment="CENTER" layoutX="90.0" layoutY="56.0" prefHeight="0.0" prefWidth="0.0" spacing="12.0">
          <children>
             <Text fx:id="tTitle" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #4747FF; -fx-font-size: 24; -fx-font-weight: 700;" text="Title" />
             <ImageView fitHeight="150.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">

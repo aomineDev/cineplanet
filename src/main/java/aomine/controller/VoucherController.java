@@ -1,9 +1,23 @@
 package aomine.controller;
 
-import aomine.store.Store;
+import javafx.scene.Node;
+import javafx.scene.image.WritableImage;
+import javafx.embed.swing.SwingFXUtils;
+import javax.imageio.ImageIO;
 
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Image;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
+import aomine.store.Store;
 import aomine.model.Seat;
 import aomine.service.SeatService;
 
@@ -73,5 +87,35 @@ public class VoucherController {
 
   public void createVoucher() {
 
+  }
+
+  private WritableImage captureView(Node view) {
+    WritableImage image = new WritableImage((int) view.getBoundsInParent().getWidth(), (int) view.getBoundsInParent().getHeight());
+    view.snapshot(null, image);
+
+    return image;
+  }
+
+  public void saveAsPng(Node view, String filePath) throws IOException {
+    WritableImage image = captureView(view);
+    File file = new File(filePath + ".png");
+    ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
+  }
+
+  public void saveAsPdf(Node view, String filePath) throws IOException {
+    WritableImage image = captureView(view);
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", outputStream);
+    byte[] imageBytes = outputStream.toByteArray();
+
+    ImageData data = ImageDataFactory.create(imageBytes);
+    Image pdfImage = new Image(data);
+
+    PdfWriter writer = new PdfWriter(filePath + ".pdf");
+    PdfDocument pdfDoc = new PdfDocument(writer);
+    Document document = new Document(pdfDoc);
+
+    document.add(pdfImage);
+    document.close();
   }
 }
