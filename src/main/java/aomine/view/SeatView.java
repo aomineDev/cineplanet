@@ -33,7 +33,7 @@ public class SeatView {
     String[][] seatMatrix = seatController.getClonedSeatMatrix(seat.getSeatMatrix());
 
     tRoomNumber.setText("Sala N°: " + seat.getRoomNumber());
-    seatController.setRoomNumber(seat.getRoomNumber());
+    seatController.setSeat(seat);
 
     seatController.setSelectedSeatsToMatrix(seatMatrix);
     

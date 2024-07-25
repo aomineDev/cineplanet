@@ -53,7 +53,7 @@ public class VoucherController {
   }
 
   public String getStoreRoomNumber() {
-    return "sala " + store.getRoomNumber();
+    return "sala " + store.getSeat().getRoomNumber();
   }
 
   public String getStoreFormat() {
@@ -66,13 +66,13 @@ public class VoucherController {
 
   public String getStoreticketPrice() {
     double ticketPrice = store.getTicketPrice();
-    return store.getMovie().getFormatedTicketPrice(ticketPrice);
+    return store.getMovie().getFormattedTicketPrice(ticketPrice);
   }
 
   public String getTotalPrice() {
     double totalPrice =  store.getTicketPrice() * selectedSeats.size();
 
-    return store.getMovie().getFormatedTicketPrice(totalPrice);
+    return store.getMovie().getFormattedTicketPrice(totalPrice);
   }
 
   public void setOccupiedSeats() {
@@ -98,7 +98,7 @@ public class VoucherController {
       getStoreTime(), 
       selectedSeats, 
       store.getTicketPrice(), 
-      store.getRoomNumber()
+      store.getSeat().getRoomNumber()
     ));
   }
 

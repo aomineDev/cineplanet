@@ -64,7 +64,7 @@ public class MovieView {
 
     renderFormatBtnList(showList);
 
-    tTicketPrice.setText(movie.getFormatedTicketPrice(showList.get(0).getTicketPrice()));
+    tTicketPrice.setText(movie.getFormattedTicketPrice(showList.get(0).getTicketPrice()));
 
     // show date
     showDateList = showList.get(0).getShowDateList();
@@ -94,7 +94,7 @@ public class MovieView {
     removeActiveClassOf(hbFormatBox);
     button.getStyleClass().add("active");
 
-    tTicketPrice.setText(movie.getFormatedTicketPrice(show.getTicketPrice()));
+    tTicketPrice.setText(movie.getFormattedTicketPrice(show.getTicketPrice()));
 
     renderShowDateBtnList(showDateList);
 

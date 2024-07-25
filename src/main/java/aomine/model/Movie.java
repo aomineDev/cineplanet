@@ -64,7 +64,7 @@ public class Movie {
     return this.duration.format(format);
   }
   
-  public String getFormatedTicketPrice(double ticketPrice) {
+  public String getFormattedTicketPrice(double ticketPrice) {
     DecimalFormat df = new DecimalFormat("#.00");
 
     return "S/. " + df.format(ticketPrice);

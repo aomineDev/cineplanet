@@ -90,7 +90,7 @@ public class SeatController {
     }
   }
 
-  public void setRoomNumber(int roomMumber) {
-    store.setRoomNumber(roomMumber);
+  public void setSeat(Seat seat) {
+    store.setSeat(seat);
   }
 }

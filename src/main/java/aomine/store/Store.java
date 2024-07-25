@@ -6,7 +6,7 @@ import java.util.HashMap;
 import aomine.model.Movie;
 import aomine.model.ShowTime;
 import aomine.model.User;
-
+import aomine.model.Seat;
 
 public class Store {
   private static Store instance;
@@ -16,23 +16,23 @@ public class Store {
   private String date;
   private ShowTime showTime;
   private double ticketPrice;
-  private int roomNumber;
+  private Seat seat;
   private ArrayList<String> selectedSeats;
-  private HashMap<String, Integer> rowMapReverse;
+  private HashMap<Character, Integer> rowMapReverse;
 
 
   private Store() {
     selectedSeats = new ArrayList<>();
     rowMapReverse = new HashMap<>();
 
-    rowMapReverse.put("A", 0);
-    rowMapReverse.put("B", 1);
-    rowMapReverse.put("C", 2);
-    rowMapReverse.put("D", 3);
-    rowMapReverse.put("E", 4);
-    rowMapReverse.put("F", 5);
-    rowMapReverse.put("G", 6);
-    rowMapReverse.put("H", 7);
+    rowMapReverse.put('A', 0);
+    rowMapReverse.put('B', 1);
+    rowMapReverse.put('C', 2);
+    rowMapReverse.put('D', 3);
+    rowMapReverse.put('E', 4);
+    rowMapReverse.put('F', 5);
+    rowMapReverse.put('G', 6);
+    rowMapReverse.put('H', 7);
   }
 
   public static Store getInstance() {
@@ -88,12 +88,12 @@ public class Store {
     this.ticketPrice = ticketPrice;
   }
 
-  public int getRoomNumber() {
-    return roomNumber;
+  public Seat getSeat() {
+    return seat;
   }
 
-  public void setRoomNumber(int roomNumber) {
-    this.roomNumber = roomNumber;
+  public void setSeat(Seat seat) {
+    this.seat = seat;
   }
 
   public ArrayList<String> getSelectedSeats() {
@@ -111,7 +111,7 @@ public class Store {
   }
 
   public int getSelectedSeatRowIndex(String seatPos) {
-    return rowMapReverse.get(String.valueOf(seatPos.charAt(0)));
+    return rowMapReverse.get(seatPos.charAt(0));
   }
 
   public int getSelectedSeatColumnIndex(String seatPos) {
