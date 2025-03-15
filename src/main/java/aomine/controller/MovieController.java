@@ -1,7 +1,5 @@
 package aomine.controller;
 
-import java.time.LocalDate;
-
 import aomine.model.Movie;
 import aomine.model.ShowTime;
 import aomine.store.Store;
